@@ -1,38 +1,38 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Simple role to install and config logwatch.
 
-Requirements
-------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
-Role Variables
+Role Variables (with defaults)
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+```
+logwatch_logDir: /var/log
+logwatch_tmpDir: /var/cache/logwatch
+logwatch_output: stdout
+logwatch_format: text
+logwatch_encode: none
+logwatch_mailTo: root
+logwatch_mailFrom: Logwatch
+logwatch_filename: /tmp/logwatch
+logwatch_archives: "No"
+logwatch_range: yesterday
+logwatch_detail: Low
+logwatch_service: All
+logwatch_mailer: "/usr/sbin/sendmail -t"
+```
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
+    - hosts: all
       roles:
-         - { role: username.rolename, x: 42 }
+        - role: apiotrowski312.logwatch
+          logwatch_format: html
+
 
 License
 -------
 
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+MIT
