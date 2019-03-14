@@ -1,0 +1,19 @@
+---
+# tasks file for logwatch
+- name: Install logwatch package
+  apt:
+    name: logwatch
+    state: present
+    update_cache: yes
+
+- name: Set custom config from template
+  template:
+    src: logwatch.conf.j2
+    dest: /usr/share/logwatch/default.conf/logwatch.conf
+
+- name: Set daily crontab for logwatch
+  cron:
+    name: "run logwatch"
+    minute: "30"
+    hour: "0"
+    job: "/usr/sbin/logwatch"
