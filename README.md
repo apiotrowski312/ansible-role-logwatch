@@ -1,10 +1,10 @@
-Role Name
+logwatch
 =========
 
 Simple role to install and config logwatch.
 
 
-Role Variables (with defaults)
+Role Variables (with defaults):
 --------------
 
 ```
@@ -23,7 +23,7 @@ logwatch_service: All
 logwatch_mailer: "/usr/sbin/sendmail -t"
 ```
 
-Example Playbook
+Example Playbook:
 ----------------
 
     - hosts: all
