@@ -32,6 +32,10 @@ Example Playbook
           logwatch_format: html
 
 
+To Do
+----------------
+- list of logwatch_service to exclude
+
 License
 -------
 

@@ -22,5 +22,6 @@ galaxy_info:
     - logwatch
     - logs
     - linux
+    - security
 
 dependencies: []
