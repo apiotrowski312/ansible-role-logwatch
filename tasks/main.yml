@@ -4,7 +4,7 @@
   apt:
     name: logwatch
     state: present
-    update_cache: yes
+    update_cache: true
 
 - name: Set custom config from template
   template:

@@ -1,18 +1,24 @@
 ---
 language: python
-python: "2.7"
+services: docker
 
-before_install:
-  # Make sure everything's up to date.
-  - sudo apt-get update -qq
+env:
+  global:
+    - ROLE_NAME: logwatch
 
 install:
-  # Install Ansible.
-  - pip install ansible
+  # Install test dependencies.
+  - pip install molecule docker
 
-  # Add ansible.cfg to pick up roles path.
-  - "printf '[defaults]\nroles_path = ../' > ansible.cfg"
+before_script:
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - mv $ROLE_NAME apiotrowski312.$ROLE_NAME
+  - cd apiotrowski312.$ROLE_NAME
 
 script:
-  # Check the role/playbook's syntax.
-  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+  # Run tests.
+  - molecule test
+
+# notifications:
+#   webhooks: https://galaxy.ansible.com/api/v1/notifications/

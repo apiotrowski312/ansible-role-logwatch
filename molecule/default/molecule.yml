@@ -1,0 +1,44 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+  options:
+    config-file: molecule/default/.yamllint
+platforms:
+  - name: UbuntuXenial
+    image: ubuntu:xenial
+  - name: UbuntuTrusty
+    image: ubuntu:trusty
+  - name: UbuntuBionic
+    image: ubuntu:bionic
+  - name: Debian:7
+    image: debian:7
+  - name: Debian:8
+    image: debian:8
+  - name: Debian:9
+    image: debian:9
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
+  test_sequence:
+    - lint
+    - destroy
+    # - dependency
+    - syntax
+    - create
+    # - prepare
+    - converge
+    - idempotence
+    - side_effect
+    - verify
+    - destroy
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

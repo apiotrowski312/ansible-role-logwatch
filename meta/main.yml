@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: apiotrowski312
   description: Install and setup logwatch
@@ -13,10 +14,16 @@ galaxy_info:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
   platforms:
-  - name: Ubuntu
-    versions:
-    - Xenial
-    - Bionic
+    - name: Ubuntu
+      versions:
+        - Xenial
+        - Bionic
+        - Trusty
+    - name: Debian
+      versions:
+        - 7
+        - 8
+        - 9
 
   galaxy_tags:
     - logwatch
