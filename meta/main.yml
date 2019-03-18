@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: logwatch
   author: apiotrowski312
   description: Install and setup logwatch
   # company: your company (optional)
