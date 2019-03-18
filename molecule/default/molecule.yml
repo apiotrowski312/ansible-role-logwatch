@@ -14,12 +14,13 @@ platforms:
     image: ubuntu:trusty
   - name: UbuntuBionic
     image: ubuntu:bionic
-  - name: Debian:7
-    image: debian:7
-  - name: Debian:8
-    image: debian:8
-  - name: Debian:9
-    image: debian:9
+  - name: DebianStretch
+    image: debian:stretch
+  - name: DebianWheezy
+    image: debian:wheezy
+  - name: DebianSid
+    image: debian:sid
+
 provisioner:
   name: ansible
   lint:
