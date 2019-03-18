@@ -21,9 +21,8 @@ galaxy_info:
         - Trusty
     - name: Debian
       versions:
+        - Jessie
         - Stretch
-        - Wheezy
-        - Sid
 
   galaxy_tags:
     - logwatch
