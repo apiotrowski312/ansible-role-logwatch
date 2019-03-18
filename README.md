@@ -1,6 +1,8 @@
 logwatch
 =========
 
+[![Build Status](https://travis-ci.com/apiotrowski312/logwatch.svg?branch=master)](https://travis-ci.com/apiotrowski312/logwatch)
+
 Simple role to install and config logwatch.
 
 
