@@ -22,7 +22,6 @@ galaxy_info:
         - Trusty
     - name: Debian
       versions:
-        - Jessie
         - Stretch
 
   galaxy_tags:
